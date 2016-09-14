@@ -1,0 +1,25 @@
+{
+  "name": "global-bin-path",
+  "version": "0.0.1",
+  "description": "Return absolute path for global module executables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QingWei-Li/global-bin-path.git"
+  },
+  "keywords": [
+    "executable",
+    "modules",
+    "path",
+    "global"
+  ],
+  "author": "qingwei-li <cinwell.li@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QingWei-Li/global-bin-path/issues"
+  },
+  "homepage": "https://github.com/QingWei-Li/global-bin-path#readme"
+}
