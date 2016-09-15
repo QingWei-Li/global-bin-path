@@ -1,7 +1,10 @@
+'use strict'
+
 var path = require('path')
+
 var binPath
 
-module.exports = function() {
+module.exports = function () {
   if (binPath) return binPath
 
   if (process.platform === 'win32') {
