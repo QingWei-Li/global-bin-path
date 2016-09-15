@@ -1,6 +1,6 @@
 {
   "name": "global-bin-path",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Return absolute path for global module executables",
   "main": "index.js",
   "scripts": {
