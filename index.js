@@ -7,7 +7,9 @@ var binPath
 module.exports = function () {
   if (binPath) return binPath
 
-  if (process.platform === 'win32') {
+  if (process.env.PREFIX) {
+    binPath = process.env.PREFIX
+  } else if (process.platform === 'win32') {
     var pathnames = process.env.PATH.split(path.delimiter)
     var len = pathnames.length
 
@@ -18,8 +20,14 @@ module.exports = function () {
       }
     }
   } else {
-    binPath = path.dirname(process.execPath)
+    binPath = path.dirname(path.dirname(process.execPath))
+
+    if (process.env.DESTDIR) {
+      binPath = path.join(process.env.DESTDIR, binPath)
+    }
   }
+
+  if (process.platform !== 'win32') binPath = path.resolve(binPath, 'bin')
 
   return binPath
 }
