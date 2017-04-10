@@ -1,6 +1,7 @@
 'use strict'
 
 var path = require('path')
+var isWin = require('is-windows')
 
 var binPath
 
@@ -9,7 +10,7 @@ module.exports = function () {
 
   if (process.env.PREFIX) {
     binPath = process.env.PREFIX
-  } else if (process.platform === 'win32') {
+  } else if (isWin()) {
     var pathnames = process.env.PATH.split(path.delimiter)
     var len = pathnames.length
 
@@ -27,7 +28,7 @@ module.exports = function () {
     }
   }
 
-  if (process.platform !== 'win32') binPath = path.resolve(binPath, 'bin')
+  if (!isWin()) binPath = path.resolve(binPath, 'bin')
 
   return binPath
 }
